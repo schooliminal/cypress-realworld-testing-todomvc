@@ -135,7 +135,7 @@ var app = app || {};
 							onChange={this.toggleAll}
 							checked={activeTodoCount === 0}
 						/>
-						<ul className="todo-list">
+						<ul className="todo-list" data-cy=".0.1.1">
 							{todoItems}
 						</ul>
 					</section>
@@ -144,7 +144,7 @@ var app = app || {};
 
 			return (
 				<div>
-					<header className="header">
+					<header className="header" data-cy=".0.0">
 						<h1>todos</h1>
 						<input
 							ref="newField"
