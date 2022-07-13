@@ -1,5 +1,5 @@
 
-import { TODOS, TARGET_URL, INPUT_SELECTOR, TODOS_LIST, TEN_TODOS, TEN_NUM_TODOS} from './mockData'
+import { TODOS, TARGET_URL, INPUT_SELECTOR, TODOS_LIST, TEN_TODOS, TEN_NUM_TODOS, ITEMS_LEFT_COUNTER} from './mockData'
 
 describe("React TodoMVC", () => {
 
@@ -42,11 +42,13 @@ describe("React TodoMVC", () => {
 
     })
 
-    it("should append new items to the bottom of the list", () => {
+    it("should display 10 numerical todos and '10 items left' counter ", () => {
         cy.create10NumTodos()
         TEN_NUM_TODOS.forEach((todo, idx) => { 
             cy.get(TODOS_LIST).eq(idx).find('label').should('contain', TEN_NUM_TODOS[idx])
         })
+
+        cy.get(ITEMS_LEFT_COUNTER).should('contain', '10 items left')
     })
           
 })

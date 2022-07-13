@@ -21,12 +21,16 @@ const INPUT_SELECTOR = '[data-cy=".0.0"]' // '.new-todo'
 // select todo's list
 const TODOS_LIST = '[data-cy=".0.1.1"] li' // '.todo-list li'
 
+const ITEMS_LEFT_COUNTER = '[data-reactid=".0.2.0"]' // '.todo-list li'
+
+
 export {
     TODOS, 
     TARGET_URL,
     INPUT_SELECTOR,
     TODOS_LIST, 
     TEN_TODOS,
-    TEN_NUM_TODOS
+    TEN_NUM_TODOS,
+    ITEMS_LEFT_COUNTER
 } 
 
