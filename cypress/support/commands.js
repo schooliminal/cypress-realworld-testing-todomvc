@@ -6,5 +6,13 @@ Cypress.Commands.add("create10Todos", () => {
 })
 
 Cypress.Commands.add("create10NumTodos", () => {
-    TEN_NUM_TODOS.forEach(todo => { cy.get(INPUT_SELECTOR).type(`${todo}{enter}`) })
+    TEN_NUM_TODOS.forEach(todo => { cy.get(INPUT_SELECTOR, { log: false }).type(`${todo}{enter}`,{ log: false }) })
+    Cypress.log({
+        name: "create 10 Num Todos",
+        consoleProps() {
+          return {
+            "Inserted Todos": TEN_NUM_TODOS,
+          }
+        },
+      })
 })

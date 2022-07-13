@@ -42,7 +42,7 @@ describe("React TodoMVC", () => {
 
     })
 
-    it("should display 10 numerical todos and '10 items left' counter ", () => {
+    it.only("should display 10 numerical todos and '10 items left' counter ", () => {
         cy.create10NumTodos()
         TEN_NUM_TODOS.forEach((todo, idx) => { 
             cy.get(TODOS_LIST).eq(idx).find('label').should('contain', TEN_NUM_TODOS[idx])
