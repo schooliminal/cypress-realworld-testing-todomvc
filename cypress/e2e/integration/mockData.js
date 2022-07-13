@@ -8,6 +8,11 @@ const TEN_TODOS = [
     'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'
 ]
 
+
+const TEN_NUM_TODOS = [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+]
+
 const TARGET_URL = 'http://127.0.0.1:8888'
 
 // select elements using custom data attrs over css class
@@ -21,6 +26,7 @@ export {
     TARGET_URL,
     INPUT_SELECTOR,
     TODOS_LIST, 
-    TEN_TODOS
+    TEN_TODOS,
+    TEN_NUM_TODOS
 } 
 
