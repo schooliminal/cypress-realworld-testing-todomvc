@@ -4,6 +4,10 @@ const TODOS = {
     TODO_ITEM_THREE:'Pickup Dry Cleaning'
 }
 
+const TEN_TODOS = [
+    'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'
+]
+
 const TARGET_URL = 'http://127.0.0.1:8888'
 
 // select elements using custom data attrs over css class
@@ -16,6 +20,7 @@ export {
     TODOS, 
     TARGET_URL,
     INPUT_SELECTOR,
-    TODOS_LIST
+    TODOS_LIST, 
+    TEN_TODOS
 } 
 

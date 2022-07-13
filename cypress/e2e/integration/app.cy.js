@@ -1,5 +1,5 @@
 
-import { TODOS, TARGET_URL, INPUT_SELECTOR, TODOS_LIST} from './mockData'
+import { TODOS, TARGET_URL, INPUT_SELECTOR, TODOS_LIST, TEN_TODOS} from './mockData'
 
 describe("React TodoMVC", () => {
 
@@ -10,10 +10,8 @@ describe("React TodoMVC", () => {
 
 
     it('adds a single todo', () => {
-        // cy.get('.new-todo') // select the newly created todo using class selector
-        cy.get(INPUT_SELECTOR) // select the newly created todo  using custom data attr
+        cy.get(INPUT_SELECTOR) 
             .type(`${TODOS.TODO_ITEM_ONE}{enter}`) // type specific todo + simulate 'enter' key click
-        // cy.get('.todo-list li') 
         cy.get(TODOS_LIST) 
             .should('have.length', 1) 
     })
@@ -23,12 +21,13 @@ describe("React TodoMVC", () => {
             .type(`${TODOS.TODO_ITEM_ONE}{enter}`)
             .type(`${TODOS.TODO_ITEM_TWO}{enter}`)
             .type(`${TODOS.TODO_ITEM_THREE}{enter}`)
-            cy.get('.todo-list li') // select the newly created todo 
+            cy.get(TODOS_LIST)
             .should('have.length', 3) 
-        
-
-
     })
 
+    it('adds 10 todos', () =>{
+        TEN_TODOS.forEach(todo => { cy.get(INPUT_SELECTOR).type(`${todo}{enter}`) })
+        cy.get(TODOS_LIST).should('have.length', TEN_TODOS.length) 
+    })
 
 })
