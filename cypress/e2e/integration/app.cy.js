@@ -30,9 +30,16 @@ describe("React TodoMVC", () => {
         cy.get(TODOS_LIST).should('have.length', TEN_TODOS.length) 
     })
 
-    it('check text for the latest 10th todo', () =>{
+    it('check text "TEN" in last todo', () =>{
         TEN_TODOS.forEach(todo => { cy.get(INPUT_SELECTOR).type(`${todo}{enter}`) })
         cy.get(TODOS_LIST).eq(TEN_TODOS.length-1).should('contain', 'ten') 
     })
+
+    it('check text inside "label" tag', () =>{
+        cy.get(INPUT_SELECTOR).type(`${TODOS.TODO_ITEM_ONE}{enter}`) 
+        cy.get(TODOS_LIST).eq(0).find('label').should('contain', TODOS.TODO_ITEM_ONE)
+
+    })
+
 
 })
