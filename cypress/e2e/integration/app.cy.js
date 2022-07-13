@@ -30,4 +30,9 @@ describe("React TodoMVC", () => {
         cy.get(TODOS_LIST).should('have.length', TEN_TODOS.length) 
     })
 
+    it('check text for the latest 10th todo', () =>{
+        TEN_TODOS.forEach(todo => { cy.get(INPUT_SELECTOR).type(`${todo}{enter}`) })
+        cy.get(TODOS_LIST).eq(TEN_TODOS.length-1).should('contain', 'ten') 
+    })
+
 })
